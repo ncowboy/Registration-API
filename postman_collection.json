@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "80a7403f-7a77-598c-5445-2c854d7a87b5",
+		"name": "registration REST api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "register user ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\n        \"username\": \"username\",\n        \"password\": \"123456\",\n        \"email\": \"mail@email.me\",\n        \"date_of_birth\": \"1983-11-23\"\n    }"
+				},
+				"url": {
+					"raw": "localhost:8080/api/sign-up",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration Google Oauth",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "ya29.GluNBcGYQ1JhpPyGpF-2SOa9umbQIkKcY0syDA_n5LiRq5UWQZ0hw1LuuZs5DGX67aaXXGjnDrCF3rge9eEGePdH_DLbxjDJ5yfr0diaD4m-44BaHBgZ09vJgWKI",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"value": "Bearer",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/auth?authclient=google",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "authclient",
+							"value": "google"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Registration Facebook Oauth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/api/auth/auth?authclient=facebook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"auth",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "authclient",
+							"value": "facebook"
+						}
+					]
+				},
+				"description": "\n\t\t"
+			},
+			"response": []
+		},
+		{
+			"name": "Registration VK Oauth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost/api/auth/auth?authclient=vk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"api",
+						"auth",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "authclient",
+							"value": "vk"
+						}
+					]
+				},
+				"description": "Не знаю, как убрать это чертово окно =("
+			},
+			"response": []
+		},
+		{
+			"name": "Registration unknown Oauth client",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessToken",
+							"value": "ca24d02bfbbbbe19ccd5b9cd5b13bbb00a44c990ca361a19181abac64fba9cf983802bdc172a9c58448b7",
+							"type": "string"
+						},
+						{
+							"key": "tokenType",
+							"type": "any"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/auth?authclient=vkkk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"auth"
+					],
+					"query": [
+						{
+							"key": "authclient",
+							"value": "vkkk"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

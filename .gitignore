@@ -1,0 +1,4 @@
+.idea
+
+config/db.php
+config/db_sqlite.php
